@@ -6,7 +6,10 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -43,11 +46,26 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </TextArea>
-            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset">
-               <VBox.margin>
-                  <Insets bottom="5.0" left="230.0" right="5.0" top="5.0" />
-               </VBox.margin>
-            </Button>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" prefHeight="20.0" prefWidth="98.0" text="Reset" GridPane.columnIndex="2" />
+                  <Button fx:id="btnCancella" mnemonicParsing="false" onAction="#doCancella" prefHeight="18.0" prefWidth="98.0" text="Cancella" GridPane.columnIndex="1" />
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="108.0" text="  Execution time:" textFill="#bcb9b9" />
+                        <Label fx:id="tmpEsecuzione" prefHeight="18.0" prefWidth="122.0" text="  " textFill="#bcb9b9" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
          </children>
       </VBox>
    </center>
